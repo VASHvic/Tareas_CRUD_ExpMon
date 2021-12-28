@@ -1,0 +1,35 @@
+body
+{
+    background-color: #99ccff;
+    font-family: Arial
+}
+
+#cabecera
+{
+    margin-bottom: 30px;
+}
+#title
+{
+    float:left;
+    width:100%;
+    margin-bottom: 20px;
+}
+#logo
+{
+    float: left;
+    width: 20%;
+}
+#textotitle
+{
+    float: left;
+    font-size:3em;
+    width: 70%;
+}
+#nuevoOK
+{
+    display: none;
+}
+#nuevoError
+{
+    display: none;
+}

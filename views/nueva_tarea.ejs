@@ -1,0 +1,31 @@
+<%- include('cabecera'); %>
+
+<h1>Formulario de alta de nueva tarea</h1>
+
+<div id="nuevoError" class="alert alert-danger">
+        Error añadiendo la tarea
+</div>
+
+<div id="nuevoOK" class="alert alert-success">
+        Tarea añadida correctamente
+</div>
+
+<div class="form-group">
+        <label for="nombre">Título:</label>
+        <input type="text" class="form-control" id="titulo" name="titulo" />
+</div>
+<div class="form-group">
+        <label for="nombre">Fecha:</label>
+        <input type="date" class="form-control" id="fecha" name="fecha" />
+</div>
+<div class="form-group">
+        <label for="telefono">Prioridad:</label>
+        <select class="form-control" id="prioridad" name="prioridad">
+                <option value="1">ALTA</option>
+                <option value="2" selected>NORMAL</option>
+                <option value="3">BAJA</option>
+        </select>
+</div>
+<button class="btn btn-secondary" onclick="nuevaTarea()">Enviar</button>
+
+<%- include('pie'); %>
