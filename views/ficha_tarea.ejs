@@ -1,0 +1,24 @@
+<%- include('cabecera') %>
+    <div class="container">
+        <% if(tarea){ %>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+
+                    <h4 class="card-title">
+                        <%= tarea.titulo %>
+                    </h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Prioridad: <%= prioridades[tarea.prioridad-1] %>
+                    </h6>
+                    <h6 class="card-subtitle mb-2 text-muted">Fecha: <%= new Date(tarea.fecha).toLocaleDateString() %>
+                    </h6>
+                    <a href="javascript:borrarTarea('<%=tarea._id%>')" class="btn btn-danger">Borrar</a>
+                </div>
+            </div>
+            <%}else{ %>
+                <h2>La tarea que busca no existe</h2>
+                <% } %>
+    </div>
+
+
+
+    <%- include('pie') %>

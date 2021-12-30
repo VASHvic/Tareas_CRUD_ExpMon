@@ -1,0 +1,43 @@
+<%- include('cabecera') %>
+    <h1>Listado de todas las tareas</h1>
+    <a href="/tareas/prioridad" class="btn btn-primary">Ordenar por prioridad</a>
+    <a href="/tareas/fecha" class="btn btn-primary">Ordenar por fecha</a>
+    <table class="table table-light table-hover mt-4">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Título</th>
+                <th scope="col">Prioridad</th>
+                <th scope="col">Fecha</th>
+                <th scope="col">Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tareas.forEach((tarea, index)=> { %>
+                <% const id=tarea._id%>
+                    <tr>
+                        <td>
+                            <%= index %>
+                        </td>
+                        <td>
+                            <%= tarea.titulo %>
+                        </td>
+                        <td>
+                            <%= prioridades[tarea.prioridad-1] %>
+                        </td>
+                        <td>
+                            <%= new Date(tarea.fecha).toLocaleDateString() %>
+                        </td>
+                        <td>
+                            <a class="btn btn-warning" href="/tareas/<%= id %> ">Ver</a>
+                            <a href="javascript:borrarTarea('<%=id%>')" class="btn btn-danger">Borrar</a>
+
+                        </td>
+                    </tr>
+
+                    <% }) %>
+        </tbody>
+
+    </table>
+
+    <%- include('pie') %>
